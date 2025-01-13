@@ -5,6 +5,13 @@ const mongoose = require("mongoose");
 
 const TodoSchema = new mongoose.Schema(
   {
+    userId:[
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'User'
+               }
+            ],
+
     todo: {
       type: String,
       trim: true,
@@ -15,14 +22,12 @@ const TodoSchema = new mongoose.Schema(
       trim: true,
       required: true,
     },
-
     priority: {
       type: String,
       trim: true,
       required: true,
       unique: true,
     },
-
     groups:{
         type: String,
         trim: true,
@@ -35,10 +40,7 @@ const TodoSchema = new mongoose.Schema(
       default: false,
     },
 
-    deleted: {
-      type: Boolean,
-      default: false,
-    },
+    
   },
   { collection: "todos", timestamps: true }
 );
