@@ -55,7 +55,6 @@ module.exports = {
                     res.errorStatusCode = 401
                     throw err
                 } else {
-                    //userdata destructure edilerek _id ve sifre yakaladik.
                     const { _id, password } = userData
 
                     if (_id && password) {

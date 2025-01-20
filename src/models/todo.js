@@ -28,19 +28,10 @@ const TodoSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
-    groups:{
-        type: String,
-        trim: true,
-        required: true,
-        unique: true,
-      },
-
     completed: {
       type: Boolean,
       default: false,
     },
-
-    
   },
   { collection: "todos", timestamps: true }
 );

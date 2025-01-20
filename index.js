@@ -23,6 +23,6 @@ app.get('/', function (req, res) {
 // app.use('/user', require('./src/routes/user'));
 
 
-// app.use(require('./src/middlewares/errorHandler'));
+app.use(require('./src/middlewares/errorHandler'));
 
 app.listen(PORT, () => console.log('http://127.0.0.1:' + PORT));
