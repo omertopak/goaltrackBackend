@@ -7,7 +7,7 @@ const { Todo } = require('../controllers/todo');
 
 router.route('/') //admin
     .get(Todo.list)
-router.route('/register')
+router.route('/todo')
     .post(Todo.create)
 router.route('/:TodoId')
     .delete(Todo.delete) 

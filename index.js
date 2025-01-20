@@ -12,15 +12,15 @@ const PORT = process.env.PORT || 8000;
 // require('express-async-errors');
 require('./src/configs/dbConnection');
 app.use(express.json());
-// app.use(require('./src/middlewares/authentication'));
+app.use(require('./src/middlewares/authentication'));
 
 app.get('/', function (req, res) {
   res.send(' --GOALTRACk--');
 });
 
-// app.use('/auth', require('./src/routes/auth'));
+app.use('/auth', require('./src/routes/auth'));
 // app.use('/tweets', require('./src/routes/tweet'));
-// app.use('/user', require('./src/routes/user'));
+app.use('/user', require('./src/routes/user'));
 
 
 app.use(require('./src/middlewares/errorHandler'));
