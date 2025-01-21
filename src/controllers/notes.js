@@ -48,7 +48,7 @@ module.exports.Notes = {
             const noteId = req.params.NoteId;
             const notesData = req.body;
 
-            const data = await Notes.updateOne({ _id: noteId },{ notesData})
+            const data = await Notes.updateOne({ _id: noteId },{ ...notesData})
     
             return res.status(201).send({
                 error: false,

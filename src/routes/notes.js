@@ -11,7 +11,7 @@ router.route('/Note')
     .post(Notes.create)
 router.route('/:NoteId')
     .put(Notes.update) 
-router.route('/:NoteId/done')
+router.route('/:NoteId')
     .delete(Notes.delete) 
 
 module.exports = router
