@@ -4,21 +4,20 @@ const mongoose = require("mongoose");
 
 const ChainSchema = new mongoose.Schema(
   {
-    userId:[
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'User'
-               }
-            ],
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
     chainName: {
       type: String,
       trim: true,
       required: true,
     },
-    process: {
+    dayNumber: {
       type: Number,
       trim: true,
       required: true,
+      default:1
     },
   },
   { collection: "chains", timestamps: true }

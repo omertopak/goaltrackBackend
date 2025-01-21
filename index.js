@@ -25,6 +25,7 @@ app.use('/user', require('./src/routes/user'));
 // Korunan endpoint'ler
 app.use('/todo',authenticateUser, require('./src/routes/todo'));
 app.use('/notes',authenticateUser, require('./src/routes/notes'));
+app.use('/chain',authenticateUser, require('./src/routes/chain'));
 
 
 
