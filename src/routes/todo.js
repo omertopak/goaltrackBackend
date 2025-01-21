@@ -2,15 +2,21 @@
 
 const router = require('express').Router()
 
-// Call Controllers:
+
 const { Todo } = require('../controllers/todo');
 
 router.route('/') //admin
-    .get(Todo.list)
+    .get(Todo.read)
 router.route('/todo')
     .post(Todo.create)
 router.route('/:TodoId')
     .delete(Todo.delete) 
+router.route('/:TodoId/done')
+    .put(Todo.done) 
+// router.route('/:TodoId/status')
+//     .put(Todo.status) 
+router.route('/:TodoId/priority')
+    .put(Todo.priority) 
 
 
 module.exports = router

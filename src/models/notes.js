@@ -4,12 +4,10 @@ const mongoose = require("mongoose");
 
 const TodoSchema = new mongoose.Schema(
   {
-    userId:[
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'User'
-               }
-            ],
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
     title: {
       type: String,
       trim: true,
