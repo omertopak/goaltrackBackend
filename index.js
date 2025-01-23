@@ -7,9 +7,18 @@ const authenticateUser = require('./src/middlewares/authentication');
 require("dotenv").config();
 app.use(cors());
 
+
+// Sadece belirli bir kökene izin ver
+const corsOptions = {
+  origin: 'http://localhost:3000', // İzin verilen domain
+};
+
+app.use(cors(corsOptions));
+
+
 const PORT = process.env.PORT || 8000;
 
-// require('express-async-errors');
+require('express-async-errors');
 require('./src/configs/dbConnection');
 app.use(express.json());
 

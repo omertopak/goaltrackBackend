@@ -27,7 +27,7 @@ module.exports = {
                     res.send({
                         error: false,
                         bearer: { accessToken, refreshToken },
-                        user,
+                        // user,
                     })
             } else {
 
