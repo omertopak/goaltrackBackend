@@ -35,6 +35,7 @@ app.use('/user', require('./src/routes/user'));
 app.use('/todo',authenticateUser, require('./src/routes/todo'));
 app.use('/notes',authenticateUser, require('./src/routes/notes'));
 app.use('/chain',authenticateUser, require('./src/routes/chain'));
+app.use('/events',authenticateUser, require('./src/routes/event'));
 
 
 
