@@ -5,14 +5,15 @@ const app = express();
 const authenticateUser = require('./src/middlewares/authentication');
 
 require("dotenv").config();
-app.use(cors());
-
-
+// app.use(cors());
 // Sadece belirli bir kökene izin ver
 // const corsOptions = {
 //   origin: 'http://localhost:3000', // İzin verilen domain
 // };
-
+// app.use(cors(corsOptions));
+const corsOptions = {
+  origin: '*'  // Tüm domainlerden erişime izin ver
+};
 app.use(cors(corsOptions));
 
 
