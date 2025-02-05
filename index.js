@@ -8,7 +8,7 @@ require("dotenv").config();
 // app.use(cors());
 // Sadece belirli bir kökene izin ver
 const corsOptions = {
-  origin: 'http://localhost:3000', // İzin verilen domain
+  origin: '*', // İzin verilen domain
 };
 app.use(cors(corsOptions));
 // const corsOptions = {
