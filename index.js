@@ -13,7 +13,7 @@ require("dotenv").config();
 
 
 app.use(cors({
-  origin: ["http://localhost:3000", "https://goaltrack-backend.vercel.app/"],
+  origin: ["http://localhost:3000", "https://goaltrack-backend.vercel.app/","https://goaltrack-nu.vercel.app"],
   credentials: true, // Eğer JWT veya cookie kullanıyorsan
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"]
