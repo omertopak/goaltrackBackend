@@ -1,20 +1,24 @@
 "use strict";
+
 const express = require("express");
 const cors = require('cors');
 const app = express();
 const authenticateUser = require('./src/middlewares/authentication');
 
 require("dotenv").config();
-// app.use(cors());
-// Sadece belirli bir kökene izin ver
-const corsOptions = {
-  origin: '*', // İzin verilen domain
-};
-app.use(cors(corsOptions));
 // const corsOptions = {
-//   origin: '*'  // Tüm domainlerden erişime izin ver
+//   origin: '*', // İzin verilen domain
 // };
-// app.use(cors());
+// app.use(cors(corsOptions));
+
+
+app.use(cors({
+  origin: ["http://localhost:3000", "https://www.goaltrack-backend-9w5i.vercel.app"],
+  credentials: true, // Eğer JWT veya cookie kullanıyorsan
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
 
 
 const PORT = process.env.PORT || 8000;
