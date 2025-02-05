@@ -24,7 +24,11 @@ module.exports.User = {
         result: newUser,
       });
     } catch (error) {
-      res.status(500).send("Error registering user.",error);
+      res.status(500).send({
+        error: true,
+        message: "Error registering user.",
+        details: error,  
+      });
     }
   },
 
