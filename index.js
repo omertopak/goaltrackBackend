@@ -10,11 +10,11 @@ require("dotenv").config();
 // const corsOptions = {
 //   origin: 'http://localhost:3000', // İzin verilen domain
 // };
-// app.use(cors(corsOptions));
-// const corsOptions = {
-//   origin: '*'  // Tüm domainlerden erişime izin ver
-// };
-app.use(cors());
+app.use(cors(corsOptions));
+const corsOptions = {
+  origin: '*'  // Tüm domainlerden erişime izin ver
+};
+// app.use(cors());
 
 
 const PORT = process.env.PORT || 8000;
